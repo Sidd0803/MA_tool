@@ -1,0 +1,21 @@
+Trade Recap: 4/13/2026
+----------
+Color - WBD Oct 20 Put 2230 traded0 .58 - looks bought live; stk ref 27.40
+WBD Oct 20 Put OI Change: +1,309
+—-------
+Color - WBD Sep 25 Put 5k traded 0.99 vs 27.39 
+WBD Sep 25 Put OI Change: -2,304
+—-------
+Color - TERN May 35 Put 999 traded .09 (looks bot) live; stk ref 52.68
+TERN May 35 Put OI Change: +465
+—-------
+Color - CWAN May 17.5 Put 2k traded .15 (looks sold) live; stk ref 24.045
+CWAN May 17.5 Put OI Change: -1,099
+—-------
+Color - CTRA Oct 34 Put 542x traded 32.98 (looks (bot), Oct 26 Put 549x traded .01 (looks sold) live; stk ref 32.98
+CTRA Oct 34 Put OI Change: +489
+CTRA Oct 26 Put OI Change: -256
+—-------
+Color - TALK Apr 5 Call 2k traded .175 (looks bot) live; stk ref 5.18 
+TALK Apr 5 Call OI Change: +2,099
+—-------
