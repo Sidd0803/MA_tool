@@ -1,0 +1,30 @@
+{
+  "target": {
+    "name": "Globalstar",
+    "ticker": "GSAT",
+    "exchange": "NYSE",
+    "ir_url": "https://www.globalstar.com/en-us/corporate/investors"
+  },
+  "acquirer": {
+    "name": "Amazon",
+    "ticker": "AMZN",
+    "ir_url": "https://ir.aboutamazon.com"
+  },
+  "stats": {
+    "deal_value": "$11.68B",
+    "per_share_value": "$90.00",
+    "undisturbed_price": "$41.54",
+    "premium_1day": "105.93%",
+    "premium_30day": "40.96%",
+    "expected_close": "2027"
+  },
+  "merger_details": {
+    "consideration": "Globalstar (GSAT) stockholders will elect to receive for each share of Globalstar common stock either $90 in cash or 0.3210 shares of Amazon (AMZN) common stock with a value capped at $90 per share. This consideration is subject to a proration mechanism that caps aggregate cash elections to a maximum of 40% of total Globalstar shares, and automatically converts excess cash consideration into stock consideration on a pro rata basis. The total transaction consideration is also subject to a downward adjustment of a maximum $110 million in the event Globalstar does not achieve certain operational milestones.",
+    "narratives": [
+      "Expected to close in 2027, for a closing value of $11.68 billion. Under the terms of the agreement, Globalstar (GSAT) stockholders will elect to receive for each share of Globalstar common stock they own either $90 in cash or 0.3210 shares of Amazon (AMZN) common stock with a value capped at $90 per share. This consideration is subject to a proration mechanism that caps aggregate cash elections to a maximum of 40% of total Globalstar shares, and automatically converts excess cash consideration into stock consideration on a pro rata basis.",
+      "In October last year, Bloomberg reported that Globalstar was exploring a potential sale. The stock was trading at $41.54 when Globalstar held early talks with Elon Musk's SpaceX, among other potential suitors."
+    ],
+    "press_release_url": "https://press.aboutamazon.com"
+  },
+  "alert_date": "April 16, 2026"
+}
