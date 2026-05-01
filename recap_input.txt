@@ -1,21 +1,38 @@
-Trade Recap: 4/13/2026
-----------
-Color - WBD Oct 20 Put 2230 traded0 .58 - looks bought live; stk ref 27.40
-WBD Oct 20 Put OI Change: +1,309
-—-------
-Color - WBD Sep 25 Put 5k traded 0.99 vs 27.39 
-WBD Sep 25 Put OI Change: -2,304
-—-------
-Color - TERN May 35 Put 999 traded .09 (looks bot) live; stk ref 52.68
-TERN May 35 Put OI Change: +465
-—-------
-Color - CWAN May 17.5 Put 2k traded .15 (looks sold) live; stk ref 24.045
-CWAN May 17.5 Put OI Change: -1,099
-—-------
-Color - CTRA Oct 34 Put 542x traded 32.98 (looks (bot), Oct 26 Put 549x traded .01 (looks sold) live; stk ref 32.98
-CTRA Oct 34 Put OI Change: +489
-CTRA Oct 26 Put OI Change: -256
-—-------
-Color - TALK Apr 5 Call 2k traded .175 (looks bot) live; stk ref 5.18 
-TALK Apr 5 Call OI Change: +2,099
-—-------
+Trade recap 4/28/2026
+---------------------------------
+Color - WBD Dec 20 Put 5k traded 0.90 - looks sold live; stk ref 26.77
+WBD Dec 20 Put OI Change:5011
+Volume:5041
+---------------------------------
+Color - WBD Jul 25 Put 9k traded 0.63 (looks sold), Oct 25 Put 9k traded 1.48 (looks bought) live; stk ref 26.67
+WBD Jul 25 Put OI Change:3025
+WBD Oct 25 Put OI Change:17995
+Volume:12307x18286
+---------------------------------
+Color - WBD Jun 27 / Oct 24 1x2 Put Spread Paid 1.60 for 1,000x Live; stk ref 26.83
+WBD Jun 27 Put OI Change:20
+WBD Oct 24 Put OI Change:1934
+Volume:1026x2008
+---------------------------------
+Color - WBD Oct 25 Put 5000x trade 1.64, looks bot, vs 26.70 stk 32d
+WBD Oct 25 Put OI Change:17995
+Volume:18286
+---------------------------------
+Color - WBD Aug 29 call bot 50,000x for 0.65 stk ref 26.795
+WBD Aug 29 Call OI Change:49855
+Volume:53048
+---------------------------------
+Color - WBD Jul 28/30 CS bot 2k for 0.60 live; stk ref 26.92
+WBD Jul 28 Call OI Change:2025
+WBD Jul 30 Call OI Change:2005
+Volume:2033x2005
+---------------------------------
+Color - WBD Jul 26/25 PS sold 2859 @ 0.25 live; stk ref 26.92
+WBD Jul 26 Put OI Change:2963
+WBD Jul 25 Put OI Change:3025
+Volume:3114x12307
+---------------------------------
+Color - VAL Dec 120 Call 7.55k traded 11.30 (looks bot) live; stk ref 101.58
+VAL Dec 120 Call OI Change:-3783
+Volume:7552
+---------------------------------
