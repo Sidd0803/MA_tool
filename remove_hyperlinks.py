@@ -4,8 +4,7 @@ from lxml import etree
 
 DOMAIN = "insidearbitrage.com"
 FONT_NAME = "Roboto"
-BLACK = "000000"
-BLUE = "0000FF"
+_MARKER = "data-removed-hyperlink"
 
 
 def remove_hyperlinks_by_domain(doc, domain):
@@ -33,11 +32,27 @@ def remove_hyperlinks_by_domain(doc, domain):
         parent = hyperlink.getparent()
         idx = list(parent).index(hyperlink)
         for child in list(hyperlink):
+            if child.tag == qn("w:r"):
+                child.set(_MARKER, "1")
             parent.insert(idx, child)
             idx += 1
         parent.remove(hyperlink)
 
     return len(hyperlinks)
+
+
+def _set_color(rPr, hex_color):
+    color_el = rPr.find(qn("w:color"))
+    if color_el is None:
+        color_el = etree.SubElement(rPr, qn("w:color"))
+    color_el.set(qn("w:val"), hex_color)
+
+
+def _set_underline(rPr, val):
+    u_el = rPr.find(qn("w:u"))
+    if u_el is None:
+        u_el = etree.SubElement(rPr, qn("w:u"))
+    u_el.set(qn("w:val"), val)
 
 
 def apply_formatting(doc):
@@ -48,14 +63,15 @@ def apply_formatting(doc):
             ancestor.tag == qn("w:hyperlink")
             for ancestor in run_el.iterancestors()
         )
+        was_removed_hyperlink = run_el.get(_MARKER) == "1"
+        if was_removed_hyperlink:
+            del run_el.attrib[_MARKER]
 
-        # Get or create w:rPr (must be first child of w:r)
         rPr = run_el.find(qn("w:rPr"))
         if rPr is None:
             rPr = etree.Element(qn("w:rPr"))
             run_el.insert(0, rPr)
 
-        # Font: set or update w:rFonts
         rFonts = rPr.find(qn("w:rFonts"))
         if rFonts is None:
             rFonts = etree.SubElement(rPr, qn("w:rFonts"))
@@ -63,16 +79,17 @@ def apply_formatting(doc):
         rFonts.set(qn("w:hAnsi"), FONT_NAME)
         rFonts.set(qn("w:cs"), FONT_NAME)
 
-        # Color: blue for hyperlinks, black for everything else
-        color_el = rPr.find(qn("w:color"))
-        if color_el is None:
-            color_el = etree.SubElement(rPr, qn("w:color"))
-        color_el.set(qn("w:val"), BLUE if in_hyperlink else BLACK)
-
-        # Remove any theme color override so explicit color takes effect
-        color_el.attrib.pop(qn("w:themeColor"), None)
-        color_el.attrib.pop(qn("w:themeShade"), None)
-        color_el.attrib.pop(qn("w:themeTint"), None)
+        if was_removed_hyperlink:
+            _set_color(rPr, "000000")
+            _set_underline(rPr, "none")
+            rStyle = rPr.find(qn("w:rStyle"))
+            if rStyle is not None:
+                rPr.remove(rStyle)
+        elif in_hyperlink:
+            _set_color(rPr, "0563C1")
+            rStyle = rPr.find(qn("w:rStyle"))
+            if rStyle is not None:
+                rPr.remove(rStyle)
 
 
 def main():
@@ -82,7 +99,7 @@ def main():
     print(f"Removed {count} insidearbitrage.com hyperlink(s).")
 
     apply_formatting(doc)
-    print(f"Applied '{FONT_NAME}' font, black for body text, blue for hyperlinks.")
+    print(f"Applied '{FONT_NAME}' font.")
 
     doc.save("MA_written_note_cleaned.docx")
     print("Saved to: MA_written_note_cleaned.docx")

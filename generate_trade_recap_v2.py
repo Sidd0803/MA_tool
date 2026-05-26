@@ -80,7 +80,7 @@ def bold_trade_volume(desc):
     """
     # Pattern: size token immediately before traded/bot/paid/for
     def replacer(m):
-        return f'<strong style="color:{BLUE};">{m.group(1)}</strong>{m.group(2)}'
+        return f'<strong style="color:{BLUE};">{m.group(1)}</strong> {m.group(2)}'
 
     # Match size before action words
     result = re.sub(
@@ -169,19 +169,21 @@ def build_html(date_str, trades):
         # Bold the trade volume in the description
         desc_html = bold_trade_volume(desc)
 
-        # Build OI + Volume line
+        # Build OI + Volume line (volume first)
+        vol_html = ""
+        if volume:
+            vol_html = f'Total Volume OTD: <strong style="color:{BLUE};">{volume}</strong>'
+
         oi_parts = []
         for lbl, val in oi:
             color = oi_color(val)
             oi_parts.append(f'{lbl}: <span style="color:{color};">{val}</span>')
         oi_html = " &nbsp;&middot;&nbsp; ".join(oi_parts)
 
-        if volume:
-            vol_html = f'Volume: <strong style="color:{BLUE};">{volume}</strong>'
-            if oi_html:
-                oi_html = oi_html + f' &nbsp;&nbsp; {vol_html}'
-            else:
-                oi_html = vol_html
+        if vol_html and oi_html:
+            oi_html = vol_html + f' &nbsp;&nbsp; ' + oi_html
+        elif vol_html:
+            oi_html = vol_html
 
         rows.append(
             f'  <tr><td style="background:{bg};padding:12px 16px;border-bottom:1px solid {BLUE_LITE};">\n'
